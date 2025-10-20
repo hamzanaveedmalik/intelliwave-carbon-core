@@ -2,32 +2,32 @@ import { PageLayout } from '@/components/PageLayout';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Briefcase, MapPin, Clock } from 'lucide-react';
-import { ContactForm } from '@/components/ContactForm';
+import { ApplicationForm } from '@/components/ApplicationForm';
 
 export default function Careers() {
   const openings = [
     {
       title: 'Senior Cloud Architect',
       department: 'Engineering',
-      location: 'San Francisco, CA / Remote',
-      type: 'Full-time',
-    },
-    {
-      title: 'Cybersecurity Analyst',
-      department: 'Security',
-      location: 'New York, NY / Remote',
+      location: 'London / Milton Keynes / Remote',
       type: 'Full-time',
     },
     {
       title: 'AI/ML Engineer',
       department: 'Engineering',
-      location: 'Remote',
+      location: 'London / Milton Keynes / Remote',
       type: 'Full-time',
     },
     {
       title: 'Solutions Architect',
       department: 'Consulting',
-      location: 'Boston, MA',
+      location: 'London / Milton Keynes / Remote',
+      type: 'Full-time',
+    },
+    {
+      title: 'Business Development Executive',
+      department: 'Sales',
+      location: 'London / Milton Keynes / Remote',
       type: 'Full-time',
     },
   ];
@@ -72,8 +72,8 @@ export default function Careers() {
                         </div>
                       </div>
                     </div>
-                    <ContactForm
-                      formspreeId="mjkazjpv"
+                    <ApplicationForm
+                      position={job.title}
                       trigger={<Button variant="outline">Apply Now</Button>}
                     />
                   </div>
@@ -86,29 +86,31 @@ export default function Careers() {
             <h2 className="text-2xl font-bold mb-4">Why Work With Us?</h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h3 className="font-semibold mb-2">💼 Competitive Benefits</h3>
+                <h3 className="font-semibold mb-2">💰 Competitive Salary</h3>
                 <p className="text-sm text-muted-foreground">
-                  Health insurance, 401(k) matching, unlimited PTO, and more.
+                  We offer market-leading compensation packages that reward your
+                  expertise and contributions.
                 </p>
               </div>
               <div>
-                <h3 className="font-semibold mb-2">🏠 Remote-First Culture</h3>
+                <h3 className="font-semibold mb-2">🏥 Health Insurance</h3>
                 <p className="text-sm text-muted-foreground">
-                  Work from anywhere with flexible hours and work-life balance.
+                  Comprehensive health insurance coverage for you and your
+                  family.
                 </p>
               </div>
               <div>
-                <h3 className="font-semibold mb-2">
-                  📚 Professional Development
-                </h3>
+                <h3 className="font-semibold mb-2">🏖️ Unlimited PTO</h3>
                 <p className="text-sm text-muted-foreground">
-                  Training budgets, certifications, and conference attendance.
+                  Take the time you need to recharge with our unlimited paid
+                  time off policy.
                 </p>
               </div>
               <div>
-                <h3 className="font-semibold mb-2">🚀 Growth Opportunities</h3>
+                <h3 className="font-semibold mb-2">🌍 Flexible Location</h3>
                 <p className="text-sm text-muted-foreground">
-                  Clear career paths and leadership development programs.
+                  Work from our London or Milton Keynes office, or remotely from
+                  anywhere.
                 </p>
               </div>
             </div>
