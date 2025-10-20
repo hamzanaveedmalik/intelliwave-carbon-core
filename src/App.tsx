@@ -1,10 +1,25 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
+import { Toaster } from '@/components/ui/toaster';
+import { Toaster as Sonner } from '@/components/ui/sonner';
+import { TooltipProvider } from '@/components/ui/tooltip';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Index from './pages/Index';
+import NotFound from './pages/NotFound';
+import Solutions from './pages/Solutions';
+
+// Service Pages
+import CloudInfrastructure from './pages/services/CloudInfrastructure';
+import Cybersecurity from './pages/services/Cybersecurity';
+import DigitalTransformation from './pages/services/DigitalTransformation';
+import AIAutomation from './pages/services/AIAutomation';
+
+// Company Pages
+import About from './pages/company/About';
+import Careers from './pages/company/Careers';
+
+// Legal Pages
+import Privacy from './pages/legal/Privacy';
+import Terms from './pages/legal/Terms';
 
 const queryClient = new QueryClient();
 
@@ -16,7 +31,29 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/solutions" element={<Solutions />} />
+
+          {/* Service Routes */}
+          <Route
+            path="/services/cloud-infrastructure"
+            element={<CloudInfrastructure />}
+          />
+          <Route path="/services/cybersecurity" element={<Cybersecurity />} />
+          <Route
+            path="/services/digital-transformation"
+            element={<DigitalTransformation />}
+          />
+          <Route path="/services/ai-automation" element={<AIAutomation />} />
+
+          {/* Company Routes */}
+          <Route path="/company/about" element={<About />} />
+          <Route path="/company/careers" element={<Careers />} />
+
+          {/* Legal Routes */}
+          <Route path="/legal/privacy" element={<Privacy />} />
+          <Route path="/legal/terms" element={<Terms />} />
+
+          {/* 404 - Keep this last */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
