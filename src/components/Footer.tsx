@@ -32,9 +32,9 @@ export const Footer = () => {
       links: [
         { label: 'Privacy Policy', href: '/legal/privacy' },
         { label: 'Terms of Service', href: '/legal/terms' },
-        { label: 'Security', href: '/legal/privacy' },
-        { label: 'Compliance', href: '/legal/privacy' },
-        { label: 'Cookie Policy', href: '/legal/privacy' },
+        { label: 'Security', href: '/legal/security' },
+        { label: 'Compliance', href: '/legal/compliance' },
+        { label: 'Cookie Policy', href: '/legal/cookie-policy' },
       ],
     },
   ];
@@ -122,19 +122,19 @@ export const Footer = () => {
             </p>
             <div className="flex items-center gap-6">
               <a
-                href="#"
+                href="/sitemap"
                 className="text-xs text-muted-foreground hover:text-foreground transition-colors"
               >
                 Sitemap
               </a>
               <a
-                href="#"
+                href="/accessibility"
                 className="text-xs text-muted-foreground hover:text-foreground transition-colors"
               >
                 Accessibility
               </a>
               <a
-                href="#"
+                href="/cookie-settings"
                 className="text-xs text-muted-foreground hover:text-foreground transition-colors"
               >
                 Cookie Settings

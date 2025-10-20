@@ -20,6 +20,14 @@ import Careers from './pages/company/Careers';
 // Legal Pages
 import Privacy from './pages/legal/Privacy';
 import Terms from './pages/legal/Terms';
+import Security from './pages/legal/Security';
+import Compliance from './pages/legal/Compliance';
+import CookiePolicy from './pages/legal/CookiePolicy';
+
+// Additional Pages
+import Sitemap from './pages/Sitemap';
+import Accessibility from './pages/Accessibility';
+import CookieSettings from './pages/CookieSettings';
 
 const queryClient = new QueryClient();
 
@@ -52,6 +60,14 @@ const App = () => (
           {/* Legal Routes */}
           <Route path="/legal/privacy" element={<Privacy />} />
           <Route path="/legal/terms" element={<Terms />} />
+          <Route path="/legal/security" element={<Security />} />
+          <Route path="/legal/compliance" element={<Compliance />} />
+          <Route path="/legal/cookie-policy" element={<CookiePolicy />} />
+
+          {/* Additional Routes */}
+          <Route path="/sitemap" element={<Sitemap />} />
+          <Route path="/accessibility" element={<Accessibility />} />
+          <Route path="/cookie-settings" element={<CookieSettings />} />
 
           {/* 404 - Keep this last */}
           <Route path="*" element={<NotFound />} />
