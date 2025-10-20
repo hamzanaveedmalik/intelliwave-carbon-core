@@ -75,9 +75,14 @@ const Index = () => {
                 Contact
               </a>
             </nav>
-            <Button className="bg-primary text-primary-foreground hover:bg-primary-hover">
-              Get Started
-            </Button>
+            <ContactForm
+              formspreeId="mjkazjpv"
+              trigger={
+                <Button className="bg-primary text-primary-foreground hover:bg-primary-hover">
+                  Get Started
+                </Button>
+              }
+            />
           </div>
         </div>
       </header>
