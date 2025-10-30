@@ -32,6 +32,7 @@ import Accessibility from './pages/Accessibility';
 import CookieSettings from './pages/CookieSettings';
 import PropertyInspectionService from './pages/PropertyInspectionService';
 import TenantOS from './pages/portfolio/TenantOS';
+import TenantOSCaseStudy from './pages/demo/TenantOSCaseStudy';
 
 const queryClient = new QueryClient();
 
@@ -79,6 +80,10 @@ const App = () => (
             <Route
               path="/demo/snagwise"
               element={<PropertyInspectionService />}
+            />
+            <Route
+              path="/demo/tenantos-case-study"
+              element={<TenantOSCaseStudy />}
             />
 
             {/* Portfolio Routes */}

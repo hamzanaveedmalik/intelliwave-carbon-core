@@ -5,13 +5,15 @@ import {
   ArrowRight,
   Cpu,
   Network,
-  Shield,
   Zap,
   CheckCircle,
   Clock,
   MapPin,
   Users,
   Star,
+  ChevronDown,
+  Quote,
+  User,
 } from 'lucide-react';
 import logo from '@/assets/intelliwave-logo.svg';
 import { ContactForm } from '@/components/ContactForm';
@@ -23,9 +25,11 @@ import { ChatWidget } from '@/components/ChatWidget';
 import { CalFloatingButton } from '@/components/CalFloatingButton';
 import { SEO, seoConfigs } from '@/components/SEO';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 const Index = () => {
   const navigate = useNavigate();
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   const primaryServices = [
     {
@@ -75,21 +79,6 @@ const Index = () => {
     },
   ];
 
-  const enterpriseServices = [
-    {
-      icon: Shield,
-      title: 'Cloud Infrastructure',
-      description:
-        'Scalable, secure cloud solutions built for enterprise performance and reliability.',
-    },
-    {
-      icon: Cpu,
-      title: 'Cybersecurity',
-      description:
-        'Advanced security frameworks protecting your digital assets and infrastructure.',
-    },
-  ];
-
   const portfolioProjects = [
     {
       title: 'Property Inspection Service',
@@ -110,13 +99,59 @@ const Index = () => {
       demoUrl: '/portfolio/tenantos',
     },
     {
-      title: 'E-commerce Storefront',
+      title: 'Case Study: E-commerce Platform Development',
       description:
         'Comprehensive online retail platform with advanced inventory management, secure multi-payment processing, and real-time analytics dashboard.',
       techStack: ['Next.js', 'Shopify', 'Tailwind CSS', 'Stripe'],
       imageUrl: '/placeholder.svg',
-      status: 'sample' as const,
-      demoUrl: '#',
+      status: 'case-study' as const,
+      demoUrl: '/demo/tenantos-case-study',
+    },
+  ];
+
+  const faqData = [
+    {
+      question: 'How long does it take?',
+      answer:
+        'Most projects are completed within 6 weeks. We provide a detailed timeline during our initial consultation, and we guarantee delivery within the agreed timeframe or your money back.',
+    },
+    {
+      question: 'What if I need changes?',
+      answer:
+        'We include 2 rounds of revisions in every project at no extra cost. Additional changes can be made for a small fee, and we always discuss pricing before any extra work.',
+    },
+    {
+      question: 'Do you offer payment plans?',
+      answer:
+        'Yes! We offer flexible payment options: 50% upfront and 50% on completion, or 3 monthly payments for larger projects. We work with you to find a plan that fits your budget.',
+    },
+    {
+      question: 'What happens after the project is done?',
+      answer:
+        'We provide 2 months of free support and maintenance after launch. This includes bug fixes, minor updates, and technical support. After that, we offer ongoing maintenance packages starting from £99/month.',
+    },
+  ];
+
+  const testimonials = [
+    {
+      name: 'Sarah Chen',
+      role: 'Founder, HealthWire',
+      company: 'HealthWire',
+      content:
+        'Intelliwave transformed our healthcare platform from concept to reality in just 5 weeks. Their attention to detail and understanding of our complex requirements was exceptional. We saw a 300% increase in user engagement after launch.',
+      avatar:
+        'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face',
+      rating: 5,
+    },
+    {
+      name: 'Marcus Thompson',
+      role: 'CEO, TenantOS',
+      company: 'TenantOS',
+      content:
+        'Working with Intelliwave was a game-changer for our property management business. They built us a comprehensive platform that handles everything from tenant applications to maintenance tracking. The AI integration they implemented has saved us 20+ hours per week.',
+      avatar:
+        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
+      rating: 5,
     },
   ];
 
@@ -390,31 +425,6 @@ const Index = () => {
                 </Card>
               ))}
             </div>
-
-            {/* Enterprise Services */}
-            <div className="border-t border-border pt-16">
-              <h3 className="text-2xl font-bold text-center mb-8">
-                Enterprise Solutions
-              </h3>
-              <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                {enterpriseServices.map((service, index) => (
-                  <Card
-                    key={index}
-                    className="p-6 border-border bg-card hover:shadow-lg transition-all duration-300 hover:border-primary/50"
-                  >
-                    <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-sm bg-accent">
-                      <service.icon className="h-6 w-6 text-accent-foreground" />
-                    </div>
-                    <h4 className="text-lg font-semibold mb-2 text-card-foreground">
-                      {service.title}
-                    </h4>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {service.description}
-                    </p>
-                  </Card>
-                ))}
-              </div>
-            </div>
           </div>
         </section>
 
@@ -442,6 +452,100 @@ const Index = () => {
                   status={project.status}
                   demoUrl={project.demoUrl}
                 />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-24 bg-background">
+          <div className="container mx-auto px-6 lg:px-8">
+            <div className="mx-auto max-w-4xl text-center mb-16">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Everything you need to know about working with Intelliwave
+              </p>
+            </div>
+
+            <div className="max-w-3xl mx-auto space-y-4">
+              {faqData.map((faq, index) => (
+                <Card
+                  key={index}
+                  className="border-border bg-card overflow-hidden"
+                >
+                  <button
+                    onClick={() =>
+                      setOpenFaqIndex(openFaqIndex === index ? null : index)
+                    }
+                    className="w-full p-6 text-left flex items-start justify-between hover:bg-muted/50 transition-colors"
+                  >
+                    <h3 className="text-lg font-semibold text-card-foreground pr-4">
+                      {faq.question}
+                    </h3>
+                    <ChevronDown
+                      className={`h-5 w-5 text-muted-foreground flex-shrink-0 transition-transform duration-200 ${
+                        openFaqIndex === index ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
+                  {openFaqIndex === index && (
+                    <div className="px-6 pb-6">
+                      <p className="text-muted-foreground leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  )}
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="py-24 bg-muted/30">
+          <div className="container mx-auto px-6 lg:px-8">
+            <div className="mx-auto max-w-4xl text-center mb-16">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+                What Our Clients Say
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Real feedback from businesses we've helped transform
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              {testimonials.map((testimonial, index) => (
+                <Card key={index} className="p-8 border-border bg-card">
+                  <div className="flex items-start gap-4 mb-6">
+                    <img
+                      src={testimonial.avatar}
+                      alt={`${testimonial.name} - ${testimonial.role}`}
+                      className="w-12 h-12 rounded-full object-cover"
+                    />
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-card-foreground">
+                        {testimonial.name}
+                      </h4>
+                      <p className="text-sm text-muted-foreground">
+                        {testimonial.role}
+                      </p>
+                      <div className="flex items-center gap-1 mt-1">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                          />
+                        ))}
+                      </div>
+                    </div>
+                    <Quote className="h-6 w-6 text-primary/20" />
+                  </div>
+                  <blockquote className="text-muted-foreground leading-relaxed italic">
+                    "{testimonial.content}"
+                  </blockquote>
+                </Card>
               ))}
             </div>
           </div>

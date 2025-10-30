@@ -9,7 +9,7 @@ interface PortfolioCardProps {
   techStack: string[];
   imageUrl: string;
   demoUrl?: string;
-  status: 'demo' | 'concept' | 'sample';
+  status: 'demo' | 'concept' | 'sample' | 'case-study';
 }
 
 export const PortfolioCard = ({
@@ -24,12 +24,14 @@ export const PortfolioCard = ({
     demo: 'Live Demo',
     concept: 'Concept',
     sample: 'Sample',
+    'case-study': 'Case Study',
   };
 
   const statusColors = {
     demo: 'bg-green-100 text-green-800',
     concept: 'bg-blue-100 text-blue-800',
     sample: 'bg-purple-100 text-purple-800',
+    'case-study': 'bg-orange-100 text-orange-800',
   };
 
   return (
