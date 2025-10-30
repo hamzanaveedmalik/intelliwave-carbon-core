@@ -596,7 +596,7 @@ const Index = () => {
               <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-8">
                 <div className="flex items-center justify-center gap-2 text-red-800 font-semibold">
                   <Clock className="h-5 w-5" />
-                  Limited spots available - 40% off for first 15 clients
+                  Limited spots available - 40% off for limited clients
                 </div>
               </div>
 
