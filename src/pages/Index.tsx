@@ -85,7 +85,7 @@ const Index = () => {
       description:
         'AI-powered property inspection platform with qualified surveyors, comprehensive reporting, and instant customer support.',
       techStack: ['React', 'TypeScript', 'Tailwind CSS', 'AI Integration'],
-      imageUrl: '/snag-demo.png',
+      imageUrl: '/optimized/snag-demo.webp',
       status: 'demo' as const,
       demoUrl: '/demo/snagwise',
     },
@@ -94,7 +94,7 @@ const Index = () => {
       description:
         'AI-powered property management platform with intelligent tenant portal, automated maintenance tracking, and real-time financial analytics.',
       techStack: ['TypeScript', 'Node.js', 'PostgreSQL', 'AI/ML'],
-      imageUrl: '/tenantos.png',
+      imageUrl: '/optimized/tenantos.webp',
       status: 'demo' as const,
       demoUrl: '/portfolio/tenantos',
     },
@@ -525,9 +525,9 @@ const Index = () => {
                       className="w-12 h-12 rounded-full object-cover"
                     />
                     <div className="flex-1">
-                      <h4 className="font-semibold text-card-foreground">
+                      <h3 className="font-semibold text-card-foreground">
                         {testimonial.name}
-                      </h4>
+                      </h3>
                       <p className="text-sm text-muted-foreground">
                         {testimonial.role}
                       </p>
@@ -630,7 +630,7 @@ const Index = () => {
               <div className="relative">
                 <div className="aspect-square rounded-sm overflow-hidden">
                   <img
-                    src="/holographic.png"
+                    src="/optimized/holographic.webp"
                     alt="Intelliwave Digital Transformation Services - Professional Web Development That Drives Results"
                     className="w-full h-full object-cover"
                   />

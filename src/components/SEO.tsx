@@ -83,6 +83,23 @@ export const SEO = ({
       />
       <meta name="business:contact_data:locality" content="United Kingdom" />
 
+      {/* Security Headers */}
+      <meta
+        httpEquiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cal.com https://formspree.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://cal.com https://formspree.io https://api.formspree.io; frame-src 'self' https://cal.com; object-src 'none'; base-uri 'self';"
+      />
+      <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+      <meta httpEquiv="X-Frame-Options" content="DENY" />
+      <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
+      <meta
+        httpEquiv="Referrer-Policy"
+        content="strict-origin-when-cross-origin"
+      />
+      <meta
+        httpEquiv="Permissions-Policy"
+        content="camera=(), microphone=(), geolocation=(), interest-cohort=()"
+      />
+
       {/* Structured Data */}
       {structuredData && (
         <script type="application/ld+json">
