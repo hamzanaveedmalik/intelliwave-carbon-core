@@ -24,6 +24,7 @@ export const Footer = () => {
       title: 'Company',
       links: [
         { label: 'About Us', href: '/company/about' },
+        { label: 'Pricing', href: '/pricing' },
         { label: 'Careers', href: '/company/careers' },
       ],
     },

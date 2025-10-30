@@ -8,33 +8,83 @@ export default function Sitemap() {
     {
       category: 'Main Pages',
       pages: [
-        { title: 'Home', url: '/', description: 'Main landing page with hero section and services overview' },
-        { title: 'Solutions', url: '/solutions', description: 'Overview of all our technology solutions' },
+        {
+          title: 'Home',
+          url: '/',
+          description:
+            'Main landing page with hero section and services overview',
+        },
+        {
+          title: 'Solutions',
+          url: '/solutions',
+          description: 'Overview of all our technology solutions',
+        },
       ],
     },
     {
       category: 'Services',
       pages: [
-        { title: 'Cloud Infrastructure', url: '/services/cloud-infrastructure', description: 'Scalable cloud solutions and infrastructure management' },
-        { title: 'Cybersecurity', url: '/services/cybersecurity', description: 'Comprehensive security solutions and threat protection' },
-        { title: 'Digital Transformation', url: '/services/digital-transformation', description: 'Modernizing business processes and technology adoption' },
-        { title: 'AI & Automation', url: '/services/ai-automation', description: 'Artificial intelligence and process automation solutions' },
+        {
+          title: 'Cloud Infrastructure',
+          url: '/services/cloud-infrastructure',
+          description: 'Scalable cloud solutions and infrastructure management',
+        },
+        {
+          title: 'Cybersecurity',
+          url: '/services/cybersecurity',
+          description: 'Comprehensive security solutions and threat protection',
+        },
+        {
+          title: 'Digital Transformation',
+          url: '/services/digital-transformation',
+          description: 'Modernizing business processes and technology adoption',
+        },
+        {
+          title: 'AI & Automation',
+          url: '/services/ai-automation',
+          description:
+            'Artificial intelligence and process automation solutions',
+        },
       ],
     },
     {
       category: 'Company',
       pages: [
-        { title: 'About Us', url: '/company/about', description: 'Learn about Intelliwave and our mission' },
-        { title: 'Careers', url: '/company/careers', description: 'Join our team - view open positions and apply' },
+        {
+          title: 'About Us',
+          url: '/company/about',
+          description: 'Learn about Intelliwave and our mission',
+        },
+        {
+          title: 'Careers',
+          url: '/company/careers',
+          description: 'Join our team - view open positions and apply',
+        },
       ],
     },
     {
       category: 'Legal & Policies',
       pages: [
-        { title: 'Privacy Policy', url: '/legal/privacy', description: 'How we collect, use, and protect your data' },
-        { title: 'Terms of Service', url: '/legal/terms', description: 'Terms and conditions for using our services' },
-        { title: 'Accessibility Statement', url: '/accessibility', description: 'Our commitment to web accessibility' },
-        { title: 'Cookie Settings', url: '/cookie-settings', description: 'Manage your cookie preferences' },
+        {
+          title: 'Privacy Policy',
+          url: '/legal/privacy',
+          description: 'How we collect, use, and protect your data',
+        },
+        {
+          title: 'Terms of Service',
+          url: '/legal/terms',
+          description: 'Terms and conditions for using our services',
+        },
+        {
+          title: 'Accessibility Statement',
+          url: '/accessibility',
+          description: 'Our commitment to web accessibility',
+        },
+        {
+          title: 'Cookie Settings',
+          url: '/cookie-settings',
+          description: 'Manage your cookie preferences',
+        },
       ],
     },
   ];
@@ -59,11 +109,14 @@ export default function Sitemap() {
                   </h2>
                   <div className="grid gap-4">
                     {section.pages.map((page, pageIndex) => (
-                      <Card key={pageIndex} className="p-6 hover:shadow-lg transition-shadow">
+                      <Card
+                        key={pageIndex}
+                        className="p-6 hover:shadow-lg transition-shadow"
+                      >
                         <div className="flex items-start justify-between">
                           <div className="flex-1">
                             <h3 className="text-lg font-semibold mb-2">
-                              <a 
+                              <a
                                 href={page.url}
                                 className="text-foreground hover:text-primary transition-colors"
                               >
@@ -73,7 +126,7 @@ export default function Sitemap() {
                             <p className="text-sm text-muted-foreground mb-3">
                               {page.description}
                             </p>
-                            <a 
+                            <a
                               href={page.url}
                               className="text-sm text-primary hover:text-primary-hover font-medium inline-flex items-center gap-1"
                             >
@@ -92,16 +145,28 @@ export default function Sitemap() {
             <div className="mt-12 p-6 bg-accent rounded-lg">
               <h3 className="text-lg font-semibold mb-3">Quick Navigation</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <a href="/#services" className="text-sm text-primary hover:text-primary-hover">
+                <a
+                  href="/#services"
+                  className="text-sm text-primary hover:text-primary-hover"
+                >
                   Our Services
                 </a>
-                <a href="/#about" className="text-sm text-primary hover:text-primary-hover">
+                <a
+                  href="/#about"
+                  className="text-sm text-primary hover:text-primary-hover"
+                >
                   About Us
                 </a>
-                <a href="/#contact" className="text-sm text-primary hover:text-primary-hover">
+                <a
+                  href="/#contact"
+                  className="text-sm text-primary hover:text-primary-hover"
+                >
                   Contact
                 </a>
-                <a href="/company/careers" className="text-sm text-primary hover:text-primary-hover">
+                <a
+                  href="/company/careers"
+                  className="text-sm text-primary hover:text-primary-hover"
+                >
                   Careers
                 </a>
               </div>

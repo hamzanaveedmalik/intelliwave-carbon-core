@@ -11,6 +11,13 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
 import { ArrowRight } from 'lucide-react';
 
@@ -30,8 +37,8 @@ export const ContactForm = ({
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    company: '',
-    phone: '',
+    projectType: '',
+    budget: '',
     message: '',
   });
 
@@ -41,6 +48,13 @@ export const ContactForm = ({
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSelectChange = (name: string, value: string) => {
+    setFormData({
+      ...formData,
+      [name]: value,
     });
   };
 
@@ -66,8 +80,8 @@ export const ContactForm = ({
         setFormData({
           name: '',
           email: '',
-          company: '',
-          phone: '',
+          projectType: '',
+          budget: '',
           message: '',
         });
         setOpen(false);
@@ -100,10 +114,12 @@ export const ContactForm = ({
       </DialogTrigger>
       <DialogContent className="sm:max-w-[600px]">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold">Get in Touch</DialogTitle>
+          <DialogTitle className="text-2xl font-bold">
+            Get Your Free Quote
+          </DialogTitle>
           <DialogDescription>
-            Fill out the form below and we'll get back to you as soon as
-            possible.
+            Tell us about your project and we'll respond within 24 hours with a
+            detailed proposal.
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-6 mt-4">
@@ -139,39 +155,58 @@ export const ContactForm = ({
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="company">Company</Label>
-              <Input
-                id="company"
-                name="company"
-                placeholder="Your Company"
-                value={formData.company}
-                onChange={handleChange}
-              />
+              <Label htmlFor="projectType">
+                I need help with <span className="text-destructive">*</span>
+              </Label>
+              <Select
+                value={formData.projectType}
+                onValueChange={(value) =>
+                  handleSelectChange('projectType', value)
+                }
+              >
+                <SelectTrigger>
+                  <SelectValue placeholder="Select project type" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="new-website">New Website</SelectItem>
+                  <SelectItem value="web-app">Web Application</SelectItem>
+                  <SelectItem value="ecommerce">E-commerce Store</SelectItem>
+                  <SelectItem value="not-sure">Not Sure</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="phone">Phone</Label>
-              <Input
-                id="phone"
-                name="phone"
-                type="tel"
-                placeholder="+44 7700 000000"
-                value={formData.phone}
-                onChange={handleChange}
-              />
+              <Label htmlFor="budget">Budget Range</Label>
+              <Select
+                value={formData.budget}
+                onValueChange={(value) => handleSelectChange('budget', value)}
+              >
+                <SelectTrigger>
+                  <SelectValue placeholder="Select budget range" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="2-5k">£2,000 - £5,000</SelectItem>
+                  <SelectItem value="5-10k">£5,000 - £10,000</SelectItem>
+                  <SelectItem value="10k+">£10,000+</SelectItem>
+                  <SelectItem value="discuss">Let's Discuss</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
           </div>
 
           <div className="space-y-2">
             <Label htmlFor="message">
-              Message <span className="text-destructive">*</span>
+              Tell us about your project{' '}
+              <span className="text-destructive">*</span>
             </Label>
             <p className="text-sm text-muted-foreground">
-              Please tell us a bit about what you're looking to solve
+              Describe your goals, target audience, and any specific
+              requirements
             </p>
             <Textarea
               id="message"
               name="message"
-              placeholder="Tell us about your project or inquiry..."
+              placeholder="I need a website for my restaurant that allows customers to book tables online and view our menu..."
               className="min-h-[120px] resize-none"
               value={formData.message}
               onChange={handleChange}
@@ -189,9 +224,13 @@ export const ContactForm = ({
               Cancel
             </Button>
             <Button type="submit" disabled={loading}>
-              {loading ? 'Sending...' : 'Send Message'}
+              {loading ? 'Sending...' : 'Get Your Free Quote'}
             </Button>
           </div>
+
+          <p className="text-sm text-muted-foreground text-center mt-4">
+            We'll respond within 24 hours with a detailed proposal
+          </p>
         </form>
       </DialogContent>
     </Dialog>

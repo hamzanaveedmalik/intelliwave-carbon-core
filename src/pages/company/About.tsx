@@ -36,16 +36,28 @@ export default function About() {
           <div className="max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl font-bold mb-6">Our Story</h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-              Founded in 2023, Intelliwave emerged from a vision to help
-              organizations navigate the complexities of digital transformation.
-              We have helped a number of organizations make this change through
-              innovative technology implementations and strategic guidance.
+              Founded in 2023, Intelliwave emerged from a vision to help UK
+              businesses establish a strong online presence through custom web
+              development. We specialize in creating fast, affordable websites
+              and web applications that help small and medium businesses compete
+              in the digital marketplace.
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Our mission is to empower businesses with cutting-edge technology
-              solutions that drive growth, efficiency, and competitive advantage
-              in an increasingly digital world.
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              Our mission is to make professional web development accessible to
+              UK businesses with transparent pricing, fixed timelines, and
+              ongoing support that ensures your success.
             </p>
+            <div className="bg-accent/50 rounded-lg p-6 border-l-4 border-primary">
+              <h3 className="font-semibold text-lg mb-2">
+                Founded by Experienced Developers
+              </h3>
+              <p className="text-muted-foreground">
+                Our team brings years of experience from leading technology
+                companies, with expertise in modern web technologies, user
+                experience design, and business growth strategies. We understand
+                both the technical and business sides of web development.
+              </p>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
@@ -82,12 +94,17 @@ export default function About() {
 
           <div className="bg-accent rounded-sm p-8 lg:p-12">
             <h2 className="text-2xl font-bold mb-4">Our Team</h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Our team consists of experienced web developers, UI/UX designers,
+              and digital marketing specialists. We combine technical expertise
+              with business acumen to create websites that not only look great
+              but drive real results for your business.
+            </p>
             <p className="text-muted-foreground leading-relaxed">
-              Our team consists of certified cloud architects, cybersecurity
-              experts, data scientists, and enterprise consultants. With diverse
-              backgrounds and deep technical expertise, we bring a unique
-              perspective to every project. We're committed to continuous
-              learning and staying at the forefront of technology innovation.
+              Based in London, UK, we understand the unique needs of British
+              businesses and work within GMT timezone to ensure seamless
+              communication. We're committed to continuous learning and staying
+              current with the latest web technologies and best practices.
             </p>
           </div>
         </div>
