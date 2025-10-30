@@ -103,15 +103,15 @@ const Index = () => {
       title: 'TenantOS',
       description:
         'AI-powered property management platform with intelligent tenant portal, automated maintenance tracking, and real-time financial analytics.',
-      techStack: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'AI/ML'],
-      imageUrl: '/snag-demo.png',
+      techStack: ['TypeScript', 'Node.js', 'PostgreSQL', 'AI/ML'],
+      imageUrl: '/tenantos.png',
       status: 'demo' as const,
       demoUrl: '/portfolio/tenantos',
     },
     {
       title: 'E-commerce Storefront',
       description:
-        'Custom online store with inventory management, multi-payment options, and analytics dashboard.',
+        'Comprehensive online retail platform with advanced inventory management, secure multi-payment processing, and real-time analytics dashboard.',
       techStack: ['Next.js', 'Shopify', 'Tailwind CSS', 'Stripe'],
       imageUrl: '/placeholder.svg',
       status: 'sample' as const,

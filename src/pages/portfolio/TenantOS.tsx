@@ -1,8 +1,11 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { PageLayout } from '@/components/PageLayout';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import {
+  ArrowLeft,
   Building2,
   Users,
   Wrench,
@@ -21,8 +24,10 @@ import {
   ExternalLink,
   Play,
 } from 'lucide-react';
+import { Footer } from '@/components/Footer';
 
 export default function TenantOS() {
+  const navigate = useNavigate();
   const features = [
     {
       icon: Building2,
@@ -87,11 +92,85 @@ export default function TenantOS() {
   ];
 
   return (
-    <PageLayout
-      title="TenantOS - AI-Powered Property Management Platform"
-      description="Revolutionary property management system with AI-driven insights, automated workflows, and comprehensive tenant portal."
-    >
-      <div className="min-h-screen bg-background">
+    <>
+      <div className="min-h-screen bg-white">
+        {/* Back to Intelliwave Banner */}
+        <div className="bg-gray-100 border-b border-gray-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+            <button
+              onClick={() => navigate('/')}
+              className="flex items-center text-sm text-gray-600 hover:text-[#636436] transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4 mr-1" />
+              Back to Intelliwave
+            </button>
+          </div>
+        </div>
+
+        {/* Header */}
+        <header className="bg-white shadow-sm border-b sticky top-0 z-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center h-16">
+              <div className="flex items-center space-x-3">
+                <div
+                  className="w-10 h-10 rounded-lg flex items-center justify-center"
+                  style={{ backgroundColor: '#636436' }}
+                >
+                  <Building2 className="w-6 h-6 text-white" />
+                </div>
+                <span
+                  className="text-2xl font-bold"
+                  style={{ color: '#636436' }}
+                >
+                  TenantOS
+                </span>
+              </div>
+              <nav className="hidden md:flex space-x-8">
+                <a
+                  href="#features"
+                  className="text-gray-700 hover:text-[#636436] transition-colors"
+                >
+                  Features
+                </a>
+                <a
+                  href="#dashboard"
+                  className="text-gray-700 hover:text-[#636436] transition-colors"
+                >
+                  Dashboard
+                </a>
+                <a
+                  href="#ai-assistant"
+                  className="text-gray-700 hover:text-[#636436] transition-colors"
+                >
+                  AI Assistant
+                </a>
+                <a
+                  href="#tech-stack"
+                  className="text-gray-700 hover:text-[#636436] transition-colors"
+                >
+                  Tech Stack
+                </a>
+              </nav>
+              <div className="flex gap-4">
+                <Button
+                  className="text-white"
+                  style={{ backgroundColor: '#636436' }}
+                >
+                  <Play className="w-4 h-4 mr-2" />
+                  View Live Demo
+                </Button>
+                <Button
+                  variant="outline"
+                  style={{ borderColor: '#636436', color: '#636436' }}
+                >
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  View Source Code
+                </Button>
+              </div>
+            </div>
+          </div>
+        </header>
+
         {/* Hero Section */}
         <section
           className="relative overflow-hidden py-24 lg:py-32"
@@ -158,7 +237,7 @@ export default function TenantOS() {
         </section>
 
         {/* Features Section */}
-        <section className="py-24 bg-background">
+        <section id="features" className="py-24 bg-background">
           <div className="container mx-auto px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center mb-16">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
@@ -195,7 +274,7 @@ export default function TenantOS() {
         </section>
 
         {/* Dashboard Preview Section */}
-        <section className="py-24 bg-muted/30">
+        <section id="dashboard" className="py-24 bg-muted/30">
           <div className="container mx-auto px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
@@ -329,7 +408,7 @@ export default function TenantOS() {
         </section>
 
         {/* AI Chat Widget Section */}
-        <section className="py-24 bg-background">
+        <section id="ai-assistant" className="py-24 bg-background">
           <div className="container mx-auto px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center mb-16">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
@@ -405,7 +484,7 @@ export default function TenantOS() {
         </section>
 
         {/* Tech Stack Section */}
-        <section className="py-24 bg-muted/30">
+        <section id="tech-stack" className="py-24 bg-muted/30">
           <div className="container mx-auto px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center mb-16">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
@@ -507,6 +586,7 @@ export default function TenantOS() {
           </div>
         </section>
       </div>
-    </PageLayout>
+      <Footer />
+    </>
   );
 }
