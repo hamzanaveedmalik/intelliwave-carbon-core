@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Instagram } from 'lucide-react';
 import logo from '@/assets/intelliwave-logo.svg';
 
 export const Footer = () => {
@@ -50,6 +50,19 @@ export const Footer = () => {
     { icon: MapPin, text: '🇬🇧 London, UK', href: '#' },
   ];
 
+  const socialLinks = [
+    {
+      icon: Linkedin,
+      href: 'https://www.linkedin.com/company/intelliwaveco/',
+      label: 'LinkedIn',
+    },
+    {
+      icon: Instagram,
+      href: 'https://www.instagram.com/intelliwave.co/',
+      label: 'Instagram',
+    },
+  ];
+
   return (
     <footer className="border-t border-border bg-background">
       {/* Main Footer Content */}
@@ -84,6 +97,25 @@ export const Footer = () => {
                   >
                     <Icon className="h-4 w-4 text-primary group-hover:text-primary-hover" />
                     <span>{item.text}</span>
+                  </a>
+                );
+              })}
+            </div>
+
+            {/* Social Links */}
+            <div className="flex items-center gap-4">
+              {socialLinks.map((social, index) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={index}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center w-10 h-10 rounded-lg bg-muted hover:bg-muted/80 text-muted-foreground hover:text-foreground transition-colors group"
+                    aria-label={social.label}
+                  >
+                    <Icon className="h-5 w-5 group-hover:scale-110 transition-transform" />
                   </a>
                 );
               })}

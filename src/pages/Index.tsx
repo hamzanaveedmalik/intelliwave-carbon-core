@@ -91,22 +91,22 @@ const Index = () => {
 
   const portfolioProjects = [
     {
-      title: 'Restaurant Booking System',
+      title: 'Property Inspection Service',
       description:
-        'A modern booking platform with table management, customer notifications, and admin dashboard.',
-      techStack: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      imageUrl: '/placeholder.svg',
+        'AI-powered property inspection platform with qualified surveyors, comprehensive reporting, and instant customer support.',
+      techStack: ['React', 'TypeScript', 'Tailwind CSS', 'AI Integration'],
+      imageUrl: '/snag-demo.png',
       status: 'demo' as const,
-      demoUrl: '#',
+      demoUrl: '/demo/snagwise',
     },
     {
-      title: 'Property Management Dashboard',
+      title: 'TenantOS',
       description:
-        'Comprehensive property management system with tenant portal, maintenance tracking, and financial reporting.',
-      techStack: ['Vue.js', 'Express', 'PostgreSQL', 'AWS'],
-      imageUrl: '/placeholder.svg',
-      status: 'concept' as const,
-      demoUrl: '#',
+        'AI-powered property management platform with intelligent tenant portal, automated maintenance tracking, and real-time financial analytics.',
+      techStack: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'AI/ML'],
+      imageUrl: '/snag-demo.png',
+      status: 'demo' as const,
+      demoUrl: '/portfolio/tenantos',
     },
     {
       title: 'E-commerce Storefront',

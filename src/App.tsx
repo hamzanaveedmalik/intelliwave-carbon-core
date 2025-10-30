@@ -29,6 +29,8 @@ import CookiePolicy from './pages/legal/CookiePolicy';
 import Sitemap from './pages/Sitemap';
 import Accessibility from './pages/Accessibility';
 import CookieSettings from './pages/CookieSettings';
+import PropertyInspectionService from './pages/PropertyInspectionService';
+import TenantOS from './pages/portfolio/TenantOS';
 
 const queryClient = new QueryClient();
 
@@ -70,6 +72,15 @@ const App = () => (
           <Route path="/sitemap" element={<Sitemap />} />
           <Route path="/accessibility" element={<Accessibility />} />
           <Route path="/cookie-settings" element={<CookieSettings />} />
+
+          {/* Demo Routes */}
+          <Route
+            path="/demo/snagwise"
+            element={<PropertyInspectionService />}
+          />
+
+          {/* Portfolio Routes */}
+          <Route path="/portfolio/tenantos" element={<TenantOS />} />
 
           {/* 404 - Keep this last */}
           <Route path="*" element={<NotFound />} />
