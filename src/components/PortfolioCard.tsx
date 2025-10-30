@@ -37,7 +37,7 @@ export const PortfolioCard = ({
       <div className="aspect-video relative overflow-hidden">
         <img
           src={imageUrl}
-          alt={title}
+          alt={`${title} - Professional Web Development Project by Intelliwave`}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />
         <div className="absolute top-4 right-4">

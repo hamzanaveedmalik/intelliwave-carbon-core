@@ -4,6 +4,7 @@ import { PageLayout } from '@/components/PageLayout';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { SEO, seoConfigs } from '@/components/SEO';
 import {
   ArrowLeft,
   Building2,
@@ -91,8 +92,41 @@ export default function TenantOS() {
     'REST API',
   ];
 
+  // Structured data for TenantOS
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'TenantOS',
+    description:
+      'AI-powered property management platform with intelligent tenant portal, automated maintenance tracking, and real-time financial analytics.',
+    url: 'https://intelliwave.co.uk/portfolio/tenantos',
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Web Browser',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'GBP',
+      availability: 'https://schema.org/InStock',
+    },
+    creator: {
+      '@type': 'Organization',
+      name: 'Intelliwave',
+      url: 'https://intelliwave.co.uk',
+    },
+    featureList: [
+      'Property Management',
+      'Tenant Portal',
+      'Maintenance Tracking',
+      'Financial Analytics',
+      'AI Insights',
+      'Smart Notifications',
+    ],
+    screenshot: 'https://intelliwave.co.uk/tenantos.png',
+  };
+
   return (
     <>
+      <SEO {...seoConfigs.tenantos} structuredData={structuredData} />
       <div className="min-h-screen bg-white">
         {/* Back to Intelliwave Banner */}
         <div className="bg-gray-100 border-b border-gray-200">

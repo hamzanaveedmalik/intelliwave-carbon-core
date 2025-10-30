@@ -12,6 +12,7 @@ export const CalFloatingButton = () => {
         },
         buttonColor: '#2563eb',
         buttonTextColor: '#ffffff',
+        buttonText: 'Book Free Consultation',
       });
       cal('ui', {
         cssVarsPerTheme: {
