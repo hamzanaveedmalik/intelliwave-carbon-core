@@ -1,0 +1,28 @@
+# Website Analysis Workflow
+name: website-analysis
+description: "Comprehensive website analysis using 15-section framework to identify improvement opportunities"
+author: "BMad"
+
+# Critical variables from config
+config_source: "{project-root}/.bmad/bmm/config.yaml"
+output_folder: "{config_source}:output_folder"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+document_output_language: "{config_source}:document_output_language"
+user_skill_level: "{config_source}:user_skill_level"
+date: system-generated
+current_year: system-generated
+current_month: system-generated
+
+# Workflow components
+installed_path: "{project-root}/.bmad/bmm/workflows/1-analysis/website-analysis"
+instructions: "{installed_path}/instructions.md"
+framework: "{project-root}/docs/sales/website-analysis-framework.md"
+checklist: "{project-root}/docs/sales/website-comparison-checklist.md"
+template: "{installed_path}/template.md"
+
+# Output configuration
+default_output_file: "{output_folder}/website-analysis-{{date}}.md"
+
+standalone: true
+

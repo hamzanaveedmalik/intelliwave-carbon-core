@@ -96,10 +96,9 @@ export const SEO = ({
 // Predefined SEO configurations for common pages
 export const seoConfigs = {
   home: {
-    title:
-      'Intelliwave - Professional Web Development Services That Drive Results',
+    title: 'Intelliwave - The Intelligence Layer for Growing Businesses',
     description:
-      'Professional web development services that drive results. Custom websites and applications for businesses worldwide. Fixed pricing from £1,799. 6-week delivery guarantee. Book free consultation.',
+      'Professional web development services that drive results. Custom development • AI automation • Smart analytics. Fixed pricing from £1,799. 6-week delivery guarantee. Book free consultation.',
     keywords:
       'professional web development services, custom web applications, business websites, e-commerce development, web design services, drive results, professional websites, digital transformation, web development services, custom software development',
     url: '/',

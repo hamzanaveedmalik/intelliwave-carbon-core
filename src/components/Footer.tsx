@@ -9,15 +9,24 @@ export const Footer = () => {
       title: 'Services',
       links: [
         {
-          label: 'Cloud Infrastructure',
-          href: '/services/cloud-infrastructure',
+          label: 'Custom Web Development',
+          href: '#services',
         },
-        { label: 'Cybersecurity', href: '/services/cybersecurity' },
         {
-          label: 'Digital Transformation',
-          href: '/services/digital-transformation',
+          label: 'Custom Web Applications',
+          href: '#services',
         },
-        { label: 'AI & Automation', href: '/services/ai-automation' },
+        {
+          label: 'E-commerce Solutions',
+          href: '#services',
+        },
+      ],
+    },
+    {
+      title: 'Products',
+      links: [
+        { label: 'Intelliwave Chat', href: '/products/intelliwave-chat' },
+        { label: 'Intelliwave Lens', href: '/products/intelliwave-lens' },
       ],
     },
     {

@@ -34,6 +34,10 @@ import PropertyInspectionService from './pages/PropertyInspectionService';
 import TenantOS from './pages/portfolio/TenantOS';
 import TenantOSCaseStudy from './pages/demo/TenantOSCaseStudy';
 
+// Product Routes
+import IntelliwaveChat from './pages/products/IntelliwaveChat';
+import IntelliwaveLens from './pages/products/IntelliwaveLens';
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -88,6 +92,16 @@ const App = () => (
 
             {/* Portfolio Routes */}
             <Route path="/portfolio/tenantos" element={<TenantOS />} />
+
+            {/* Product Routes */}
+            <Route
+              path="/products/intelliwave-chat"
+              element={<IntelliwaveChat />}
+            />
+            <Route
+              path="/products/intelliwave-lens"
+              element={<IntelliwaveLens />}
+            />
 
             {/* 404 - Keep this last */}
             <Route path="*" element={<NotFound />} />

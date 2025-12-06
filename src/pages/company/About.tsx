@@ -34,29 +34,37 @@ export default function About() {
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold mb-6">Our Story</h2>
+            <h2 className="text-3xl font-bold mb-6">
+              From Building Solutions to Building Intelligence
+            </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-              Founded in 2023, Intelliwave emerged from a vision to help UK
-              businesses establish a strong online presence through custom web
-              development. We specialize in creating fast, affordable websites
-              and web applications that help small and medium businesses compete
-              in the digital marketplace.
+              Founded in 2023, Intelliwave started by delivering custom web
+              applications for UK businesses. After building 50+ projects, we
+              noticed a pattern:
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Our mission is to make professional web development accessible to
-              UK businesses with transparent pricing, fixed timelines, and
-              ongoing support that ensures your success.
+            <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+              Every business was asking for the same intelligence layer—AI chat
+              support, cross-platform analytics, lightweight CRM. So we built
+              it.
             </p>
             <div className="bg-accent/50 rounded-lg p-6 border-l-4 border-primary">
-              <h3 className="font-semibold text-lg mb-2">
-                Founded by Experienced Developers
+              <h3 className="font-semibold text-lg mb-3">
+                Today, we offer both:
               </h3>
-              <p className="text-muted-foreground">
-                Our team brings years of experience from leading technology
-                companies, with expertise in modern web technologies, user
-                experience design, and business growth strategies. We understand
-                both the technical and business sides of web development.
-              </p>
+              <ul className="space-y-2 text-muted-foreground">
+                <li className="flex items-start">
+                  <span className="text-primary mr-2">•</span>
+                  <span>
+                    <strong>Custom Solutions</strong> (for unique needs)
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-primary mr-2">•</span>
+                  <span>
+                    <strong>Intelligence Products</strong> (for common needs)
+                  </span>
+                </li>
+              </ul>
             </div>
           </div>
 

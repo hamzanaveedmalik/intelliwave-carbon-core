@@ -11,19 +11,22 @@ import {
   MapPin,
   Users,
   Star,
-  ChevronDown,
   Quote,
   User,
+  Sparkles,
+  MessageSquare,
+  ChevronDown,
 } from 'lucide-react';
-import logo from '@/assets/intelliwave-logo.svg';
-import { ContactForm } from '@/components/ContactForm';
 import { Footer } from '@/components/Footer';
 import { PortfolioCard } from '@/components/PortfolioCard';
 import { TrustBadges } from '@/components/TrustBadges';
 import { BookingButton } from '@/components/BookingButton';
 import { ChatWidget } from '@/components/ChatWidget';
 import { CalFloatingButton } from '@/components/CalFloatingButton';
+import { ContactForm } from '@/components/ContactForm';
+import { WaitlistForm } from '@/components/WaitlistForm';
 import { SEO, seoConfigs } from '@/components/SEO';
+import { Navigation } from '@/components/Navigation';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
@@ -209,66 +212,7 @@ const Index = () => {
       <div className="min-h-screen bg-background">
         <ChatWidget />
         <CalFloatingButton />
-        {/* Header */}
-        <header className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
-          <div className="container mx-auto px-6 lg:px-8">
-            <div className="flex h-16 items-center justify-between">
-              <a
-                href="/"
-                className="flex items-center gap-3 cursor-pointer group"
-              >
-                <img
-                  src={logo}
-                  alt="Intelliwave - Professional Web Development Services That Drive Results"
-                  className="h-8 w-auto group-hover:opacity-80 transition-opacity"
-                />
-                <span className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
-                  Intelliwave
-                </span>
-              </a>
-              <nav className="hidden md:flex items-center gap-8">
-                <a
-                  href="#services"
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Services
-                </a>
-                <a
-                  href="#portfolio"
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Portfolio
-                </a>
-                <a
-                  href="/pricing"
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Pricing
-                </a>
-                <a
-                  href="/company/about"
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  About
-                </a>
-                <a
-                  href="#contact"
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Contact
-                </a>
-              </nav>
-              <ContactForm
-                formspreeId="mjkazjpv"
-                trigger={
-                  <Button className="bg-primary text-primary-foreground hover:bg-primary-hover">
-                    Get Started
-                  </Button>
-                }
-              />
-            </div>
-          </div>
-        </header>
+        <Navigation />
 
         {/* Hero Section */}
         <section className="relative overflow-hidden py-24 lg:py-32">
@@ -289,10 +233,10 @@ const Index = () => {
           <div className="container relative mx-auto px-6 lg:px-8 z-10">
             <div className="mx-auto max-w-4xl text-center">
               <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl mb-6">
-                Professional Web Development Services That Drive Results
+                The Intelligence Layer for Growing Businesses
               </h1>
               <p className="text-lg sm:text-xl text-white/90 mb-10 leading-relaxed">
-                Custom websites and applications for businesses worldwide
+                Custom development • AI automation • Smart analytics
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
@@ -369,10 +313,10 @@ const Index = () => {
           <div className="container mx-auto px-6 lg:px-8">
             <div className="mx-auto max-w-4xl text-center mb-16">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
-                Professional Web Development Services That Drive Results
+                The Intelligence Layer for Growing Businesses
               </h2>
               <p className="text-lg text-muted-foreground">
-                Custom websites and applications for businesses worldwide
+                Custom development • AI automation • Smart analytics
               </p>
             </div>
 
@@ -424,6 +368,134 @@ const Index = () => {
                   </div>
                 </Card>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Products Section - Intelliwave Chat */}
+        <section id="products" className="py-24 bg-gradient-to-br from-purple-500/10 to-primary/5">
+          <div className="container mx-auto px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto text-center mb-12">
+              <Badge className="mb-6 bg-purple-500 text-white border-purple-600">
+                <Sparkles className="h-3 w-3 mr-2" />
+                New Product
+              </Badge>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+                Intelligence Products for Common Needs
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8">
+                Ready-made solutions that set up automatically and scale with your business
+              </p>
+            </div>
+
+            <div className="max-w-5xl mx-auto">
+              <Card className="p-8 md:p-12 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50/50 to-background dark:from-purple-950/20 hover:shadow-xl transition-all duration-300">
+                <div className="grid md:grid-cols-2 gap-8 items-center">
+                  <div>
+                    <div className="flex items-center gap-3 mb-4">
+                      <Badge className="bg-purple-600 text-white">Featured</Badge>
+                      <span className="text-sm text-muted-foreground">Coming Soon</span>
+                    </div>
+                    <h3 className="text-3xl font-bold mb-4">
+                      Intelliwave Chat
+                    </h3>
+                    <p className="text-xl text-muted-foreground mb-4">
+                      AI Customer Support That Sets Up Automatically for Your Shopify Store
+                    </p>
+                    <p className="text-muted-foreground mb-6 leading-relaxed">
+                      Zero setup. Instant support. Affordable pricing. The only Shopify support tool that creates your knowledge base automatically from your store content.
+                    </p>
+                    <ul className="space-y-2 mb-6">
+                      <li className="flex items-center gap-2">
+                        <CheckCircle className="h-5 w-5 text-green-500" />
+                        <span>Automatic knowledge base setup</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle className="h-5 w-5 text-green-500" />
+                        <span>Shopify-native integration</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle className="h-5 w-5 text-green-500" />
+                        <span>Starting at $49/month</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle className="h-5 w-5 text-green-500" />
+                        <span>24/7 AI-powered support</span>
+                      </li>
+                    </ul>
+                    <div className="flex flex-col sm:flex-row gap-4">
+                      <WaitlistForm
+                        formspreeId="mjkazjpv"
+                        trigger={
+                          <Button
+                            size="lg"
+                            className="bg-purple-600 text-white hover:bg-purple-700"
+                          >
+                            Join Waitlist - Get 50% Off
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </Button>
+                        }
+                      />
+                      <Button
+                        size="lg"
+                        variant="outline"
+                        onClick={() => navigate('/products/intelliwave-chat')}
+                      >
+                        Learn More
+                      </Button>
+                    </div>
+                    <p className="text-sm text-muted-foreground mt-4">
+                      <Star className="h-4 w-4 inline fill-yellow-400 text-yellow-400 mr-1" />
+                      Join 500+ Shopify stores on the waitlist
+                    </p>
+                  </div>
+                  <div className="relative">
+                    <div className="aspect-square rounded-lg bg-gradient-to-br from-purple-100 to-purple-200 dark:from-purple-900/30 dark:to-purple-800/30 flex items-center justify-center">
+                      <div className="text-center p-8">
+                        <MessageSquare className="h-24 w-24 text-purple-600 mx-auto mb-4" />
+                        <p className="text-muted-foreground">
+                          Product Preview
+                        </p>
+                        <p className="text-sm text-muted-foreground mt-2">
+                          Screenshot coming soon
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Beyond Custom Development Section */}
+        <section className="py-24 bg-gradient-to-br from-primary/5 to-accent/5">
+          <div className="container mx-auto px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">
+                Beyond Custom Development
+              </h2>
+              <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
+                After building 50+ solutions, we noticed businesses kept asking
+                for the same things: AI support, cross-platform analytics, and
+                lightweight CRM.
+              </p>
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                That's why we're building intelligence products. Join our beta
+                waitlist to be first in line.
+              </p>
+              <ContactForm
+                formspreeId="mjkazjpv"
+                trigger={
+                  <Button
+                    size="lg"
+                    className="bg-primary text-primary-foreground hover:bg-primary-hover"
+                  >
+                    Join Beta Waitlist
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                }
+              />
             </div>
           </div>
         </section>
@@ -705,6 +777,62 @@ const Index = () => {
               </div>
 
               <TrustBadges />
+            </div>
+          </div>
+        </section>
+
+        {/* How We Help You Grow Section */}
+        <section className="py-24 bg-background">
+          <div className="container mx-auto px-6 lg:px-8">
+            <div className="max-w-6xl mx-auto">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-12 text-center">
+                How We Help You Grow
+              </h2>
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* Custom Solutions */}
+                <Card className="p-8 border-border bg-card hover:shadow-lg transition-all duration-300 hover:border-primary/50">
+                  <h3 className="text-2xl font-semibold mb-4 text-card-foreground">
+                    Custom Solutions
+                  </h3>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    Need something built from scratch? We deliver in 6 weeks.
+                  </p>
+                  <Button
+                    variant="outline"
+                    className="w-full md:w-auto"
+                    onClick={() =>
+                      document
+                        .getElementById('services')
+                        ?.scrollIntoView({ behavior: 'smooth' })
+                    }
+                  >
+                    See Services
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Card>
+
+                {/* Intelligence Products */}
+                <Card className="p-8 border-border bg-card hover:shadow-lg transition-all duration-300 hover:border-primary/50">
+                  <h3 className="text-2xl font-semibold mb-4 text-card-foreground">
+                    Intelligence Products
+                  </h3>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    Ready-to-use AI tools that connect your existing systems.
+                  </p>
+                  <Button
+                    variant="outline"
+                    className="w-full md:w-auto"
+                    onClick={() => {
+                      // Open products dropdown by scrolling to top and triggering hover
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                      setProductsDropdownOpen(true);
+                    }}
+                  >
+                    Explore Products
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Card>
+              </div>
             </div>
           </div>
         </section>
